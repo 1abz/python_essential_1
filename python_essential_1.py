@@ -1,4 +1,5 @@
 amount_of_employees = int(input('How many employees does your business have: '))
+total_age = 0
 
 for index in range(amount_of_employees):
     first_name_str = ""
@@ -21,10 +22,17 @@ for index in range(amount_of_employees):
                 print('Enter age between 18 and 100')
             else:
                 x = True
+                total_age = total_age + int(age)
         else:
             print('Please enter an integer')
 
+
     print(f"{first_name_str} {last_name_str} , {age}")
+
+    if total_age > 500:
+        print(f"Total age group of all employees: {total_age}")
+
+
 
 
 
