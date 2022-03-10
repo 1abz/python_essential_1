@@ -142,3 +142,9 @@ def retrieve_data():
                 print("insert valid id")
 
 
+def update_employee():
+    updated_employee_number = e_id()
+    key = input('Enter key: ')
+    new_value = input("Enter updated value: ")
+    employees[updated_employee_number][key]=new_value
+
