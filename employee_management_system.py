@@ -1,14 +1,7 @@
 import functions.py
 # Employee Management System
 
-#Employee ID function
-
-
-
-
-
 if __name__ == '__main__':
-
 
     print('"1" = Add an employee')
     print('"2" = Remove an employee')
@@ -25,12 +18,14 @@ if __name__ == '__main__':
         command = input('What operation you require, 1/2/3/4/5/6/7:  ')
 
         if command == "1":
-            functitons.add_employee()
+            functions.add_employee()
             print(employees)
+            print('Employee successfully added')
 
         elif command == "2":
-            del_employee()
+            functions.del_employee()
             print(employees)
+            print('Employee successfully deleted')
 
         elif command == "3":
             print('Total Number of employees in list')
@@ -40,27 +35,17 @@ if __name__ == '__main__':
             print(employees)
 
         elif command == "5":
-            update_employee()
+            functions.update_employee()
             print(employees)
+            print('Employee successfully updated')
 
         elif command == "6":
-            retrieve_data()
+            functions.retrieve_data()
+            print('Employee successfully retrieved')
 
         elif command == "7":
-                break
+            print('Thankyou for using the employee management system')
+            break
+
         else:
             print("Incorrect command. Try again :)")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
