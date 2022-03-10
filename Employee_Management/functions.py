@@ -1,5 +1,6 @@
 employees = []
 
+
 def e_id():
     while True:
         employee_id = (input("Enter Employee ID:  "))
@@ -76,6 +77,7 @@ def e_unigrad():
         else:
             print('Please enter Yes or No')
 
+
 def input_employee():
     employ = {
         "Employee ID": e_id(),
@@ -88,6 +90,7 @@ def input_employee():
         "Employee Grad": e_unigrad(),
     }
     return employ
+
 
 def add_employee():
     employeeid = e_id()
@@ -116,22 +119,25 @@ def add_employee():
 
 
 def del_employee():
-    del_employee_id = (input("Enter Employee ID: "))
-    if del_employee_id.isdigit():
-        for i_d in range(len(employees)):
-            if employees[i_d]['Employee ID'] == del_employee_id:
-                del employees[i_d]
-                return employees
-            else:
-                print("Employee ID doesnt exist")
+    while True:
+        del_employee_id = (input("Enter Employee ID: "))
+        if del_employee_id.isdigit():
+            for i_d in range(len(employees)):
+                if employees[i_d]['Employee ID'] == del_employee_id:
+                    del employees[i_d]
+                    return employees
+                else:
+                    print("Employee ID doesnt exist")
 
 
 def retrieve_data():
-    ret_employee_id = e_id()
-    if ret_employee_id.isdigit():
-        for rid in range(len(employees)):
-            if employees[rid]['Employee ID'] == ret_employee_id:
-                print(employees[rid])
+    while True:
+        ret_employee_id = e_id()
+        if ret_employee_id.isdigit():
+            for rid in range(len(employees)):
+                if employees[rid]['Employee ID'] == ret_employee_id:
+                    print(employees[rid])
+                    return
             else:
                 print("insert valid id")
 
