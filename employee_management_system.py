@@ -109,7 +109,10 @@ def add_employee():
                 "Employee_Grad": employee_g
     }
 
-    return employ
+    while True:
+        employees.append(employ)
+        return employee
+
 
 
 if __name__ == '__main__':
@@ -124,17 +127,17 @@ if __name__ == '__main__':
     print('"7" = Update employees data')
     print('"8" = Exit')
 
-    Total_Number_of_Employees = 0
-
-    employees = {}
+    employees = []
 
     while True:
         command = input('What operation you require, 1/2/3/4/5/6/7:  ')
 
         if command == "1":
-            employee = input_employee()
-            employee
-            print(employee)
+            add_employee()
+            print(employees)
+
+        elif command =
+
 
 
 
