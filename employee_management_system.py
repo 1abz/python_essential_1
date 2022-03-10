@@ -14,7 +14,7 @@ def e_id():
 def e_first_name():
     while True:
         employee_fn = input("Enter first name:  ")
-        if 2 <= len(employee_fn):
+        if 2 <= len(employee_fn.strip()):
             return employee_fn
         else:
             print('Enter minimum two characters')
@@ -23,7 +23,7 @@ def e_first_name():
 def e_last_name():
     while True:
         employee_ln = input("Enter last name:  ")
-        if 2 <= len(employee_ln):
+        if 2 <= len(employee_ln.strip()):
             return employee_ln
         else:
             print('Enter minimum two characters')
@@ -31,8 +31,10 @@ def e_last_name():
 
 def e_birth_year():
     while True:
-        employee_by = int(input("Enter birth year:  "))
-        if 1900 <= (employee_by) <= 2004:
+        employee_by = (input("Enter birth year:  "))
+        if employee_by.isdigit():
+            return employee_by
+        if 1900 <= int(employee_by) <= 2004:
             return employee_by
         else:
             print('Enter value between 1990 and 2004')
@@ -40,9 +42,10 @@ def e_birth_year():
 
 def e_birth_month():
     while True:
-        employee_bm = int(input("Enter birth month:  "))
-        if 1 <= (employee_bm) <= 12:
-            return employee_bm
+        employee_bm = (input("Enter birth month:  "))
+        if employee_bm.isdigit():
+            if 1 <= int(employee_bm) <= 12:
+                return employee_bm
         else:
             print('Enter value between 1 and 12')
 
@@ -50,7 +53,7 @@ def e_birth_month():
 def e_birth_day():
     while True:
         employee_bd = int(input("Enter birth day:  "))
-        if 1 <= (employee_bd) <= 31:
+        if 1 <= employee_bd <= 31:
             return employee_bd
         else:
             print('Enter value between 1 and 31')
@@ -99,19 +102,48 @@ def add_employee():
     employee_g = e_unigrad()
 
     employ ={
-                "Employee_ID": employeeid,
-                "Employee_First Name": employee_f_name,
-                "Employee_Last Name": employee_l_name,
-                "Employee_Birth Day": employ_day,
-                "Employee_Birth Month": employee_b_month,
-                "Employee_Birth Year": employee_b_year,
-                "Employee_Position": employee_pos,
-                "Employee_Grad": employee_g
+                "Employee ID": employeeid,
+                "Employee First Name": employee_f_name,
+                "Employee Last Name": employee_l_name,
+                "Employee Birth Day": employ_day,
+                "Employee Birth Month": employee_b_month,
+                "Employee Birth Year": employee_b_year,
+                "Employee Position": employee_pos,
+                "Employee Grad": employee_g
     }
 
     while True:
         employees.append(employ)
-        return employee
+        return employees
+
+
+def del_employee():
+    del_employee_id = (input("Enter Employee ID: "))
+    if del_employee_id.isdigit():
+        for i_d in range(len(employees)):
+            if employees[i_d]['Employee ID'] == del_employee_id:
+                del employees[i_d]
+                return employees
+            else:
+                print("Employee ID doesnt exist")
+
+def update_employee():
+    updated_employee_number = e_id()
+    key = input('Enter key: ')
+    new_value = input("Enter updated value: ")
+    employee['f'({updated_employee_number})']['f'({key})'] = ne
+
+def retrieve_data()
+    ret_employee_id = e_id()
+    if ret_employee_id.isdigit():
+        for rid in range(len(employees)):
+            if employees[rid]['Employee ID'] == ret_employee_id:
+                return
+
+
+
+
+
 
 
 
@@ -124,8 +156,8 @@ if __name__ == '__main__':
     print('"4" = Get a list of the Employees')
     print('"5" = Update employee data')
     print('"6" = Retrieve the data of an employee (by ID)')
-    print('"7" = Update employees data')
-    print('"8" = Exit')
+    print('"7" = Quit')
+
 
     employees = []
 
@@ -136,12 +168,35 @@ if __name__ == '__main__':
             add_employee()
             print(employees)
 
-        elif command =
+        elif command == "2":
+            del_employee()
+            print(employees)
+
+        elif command == "3":
+            print('Total Number of employees in list')
+            print(len(employees))
+
+        elif command == "4":
+            print(employees)
+
+        elif command == "5":
+            update_employee()
+            print(employees)
+
+        elif command == "6":
+            retrieve_data()
+
+        elif command == "7":
+                break
+        else:
+            print("Incorrect command. Try again :)")
 
 
 
 
-#add employee
+
+
+
 
 
 
