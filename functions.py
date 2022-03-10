@@ -1,3 +1,5 @@
+employees = []
+
 def e_id():
     while True:
         employee_id = (input("Enter Employee ID:  "))
@@ -124,16 +126,13 @@ def del_employee():
                 print("Employee ID doesnt exist")
 
 
-def update_employee():
-    updated_employee_number = e_id()
-    key = input('Enter key: ')
-    new_value = input("Enter updated value: ")
-    employee['f'({updated_employee_number})']['f'({key})'] = ne
-
-def retrieve_data()
+def retrieve_data():
     ret_employee_id = e_id()
     if ret_employee_id.isdigit():
         for rid in range(len(employees)):
             if employees[rid]['Employee ID'] == ret_employee_id:
-                return
+                print(employees[rid])
+            else:
+                print("insert valid id")
+
 
