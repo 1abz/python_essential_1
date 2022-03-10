@@ -17,12 +17,15 @@ def division(x, y):
     return x / y
 
 
+# if __name__ == '__main__':
+
+
 first_number = int(input("Type First number: "))
 second_number = int(input("Type Second Number "))
 
 while True:
-    print('Case sensitive')
     operation = input('What operation you require, addition, subtraction, multiplication, division:  ' )
+    operation = operation.lower()
 
     if operation in ('addition', 'subtraction', 'multiplication', 'division'):
 
@@ -36,10 +39,13 @@ while True:
             print(multiply(first_number, second_number))
 
         elif operation == 'division':
-            print(add(first_number, second_number))
+            print(division(first_number, second_number))
 
-        next_calc = input('Do you require another operation: Yes/No  ')
-        if next_calc == No:
-        break
+
+        next_calc = input('Do you require another operation: yes/no  ')
+        if next_calc == 'no':
+            print('Thankyou!')
+            break
+
 
 
